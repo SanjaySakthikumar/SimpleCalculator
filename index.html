@@ -1,0 +1,119 @@
+<h1>    Simple Calculator</h1>
+<div class="input">
+<input type="number" placeholder="num1" id="num1"><br>
+<input type="number" placeholder="num2" id="num2"><br>
+<button id="Operationbtn">Operation</button>
+</div>
+
+<div class="Operation">
+    <p class="close">X</p>
+    <button id="add">Add</button>
+    <button id="Subtract">Subtract</button>
+    <button id="Multiple">Multiple</button>
+    <button id="Divide">Divide</button>
+</div>
+<h1 id="ans">Result is : </h1>
+
+<div class="extra">
+
+</div>
+
+
+<style>
+
+    .Operation{
+        background-color: antiquewhite;
+        border: 2px black solid;
+        width: fit-content;
+        padding: 20px;
+        height: 100px;
+        display: none;
+        margin-top: 150px;
+        margin-left: 600px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .extra{
+        background-color: gray;
+        opacity: 0.5;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        display: none;
+    }
+    #ans{
+        display: none;
+    }
+    .close{
+        text-align: end;
+        cursor: pointer;
+    }
+
+    
+</style>
+
+
+<script>
+var add = document.getElementById("add")
+var Subtract = document.getElementById("Subtract")
+var Multiple = document.getElementById("Multiple")
+var Divide = document.getElementById("Divide")
+var num1 = document.getElementById("num1")
+var num2 = document.getElementById("num2")
+var Operation = document.querySelector(".Operation")
+var btn = document.getElementById("Operationbtn")
+var extra = document.querySelector(".extra")
+var ans =document.getElementById("ans")
+var close = document.querySelector(".close")
+
+
+
+btn.addEventListener("click",function(){
+    Operation.style.display="block"
+    extra.style.display="block"
+    if(num1.value===""){
+    alert("Enter number 1")
+}
+
+else if(num2.value===""){
+    alert("Enter number 2")
+}
+})
+add.addEventListener("click",function(){
+    Operation.style.display="none"
+    extra.style.display="none"
+    ans.style.display="block"
+    var a = Number(num1.value)+Number(num2.value)
+    ans.textContent = "Result is : "+a
+})
+Subtract.addEventListener("click",function(){
+    Operation.style.display="none"
+    extra.style.display="none"
+    ans.style.display="block"
+    var a = Number(num1.value)-Number(num2.value)
+    ans.textContent = "Result is : "+a
+})
+Multiple.addEventListener("click",function(){
+    Operation.style.display="none"
+    extra.style.display="none"
+    ans.style.display="block"
+    var a = Number(num1.value)*Number(num2.value)
+    ans.textContent = "Result is : "+a
+})
+Divide.addEventListener("click",function(){
+    Operation.style.display="none"
+    extra.style.display="none"
+    ans.style.display="block"
+    var a = Number(num1.value)/Number(num2.value)
+    ans.textContent = "Result is : "+a
+})
+
+close.addEventListener("click",function(){
+    Operation.style.display="none"
+    extra.style.display="none"
+})
+</script>
